@@ -82,7 +82,7 @@ func GetProjectBuildInfo(project, version, build string) (*BuildResponse, error)
 }
 
 func DownloadJar(project, version, build, download string, filepath string) error {
-	res, err := httpClient.Get(API_BASE_URL + joinPath("/projects", project, "versions", version, "builds", build, "downloads", download))
+	res, err := http.Get(API_BASE_URL + joinPath("/projects", project, "versions", version, "builds", build, "downloads", download))
 	if err != nil {
 		return err
 	}
